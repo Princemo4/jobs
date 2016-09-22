@@ -1,0 +1,49 @@
+<!-- blog Page content -->
+     <section class="blog">
+         <div class="container">
+             <div class="page-nav">
+                 <span class="heading-nav"><a href="index.html">Home</a> | Blog Post Title</span>
+             </div>
+             <div class="row">
+                 <!-- blog content -->
+                 <div class="col-md-9 single-content">
+                     <article class="post">
+                         <div class="single-thumb">
+                             <img src="images/news1.jpg" alt="#" title="Lorem ipsum dolor sit amet." class="img-responsive">
+                         </div>
+                         <div class="post-content">
+                             <h2><%= @posting.title %></h2>
+                             <div class="post-meta">
+                                 <ul class="list-inline">
+                                     <li class="post-date"><i class="fa fa-calendar"></i> <%= time_ago_in_words(@posting.updated_at) %></li>
+                                     <li><a href="#"><i class="fa fa-user-md"></i> <%= @user.name  %></a></li>
+                                     <li class="post-comment"><a href="#"><i class="fa fa-comments-o"></i><%= @posting.submitals.count %> People Applied to this Job</a></li>
+                                 </ul>
+                              </div>
+                              <div>
+                                 <ul class="list-inline">
+                                    <li class="fa fa-currency" style="font-weight: bold">Salary: <%= number_to_currency(@posting.salary, precision: 2) %></li>
+                                 </ul>
+                             </div>
+                             <br>
+                             <p><%= @posting.description %></p>
+                         </div>
+                     </article>
+                   </div>
+
+                     <!-- Comment Box -->
+                     <div>
+                       <%= form_for @submital, url: posting_submitals_path(@posting, current_user) do |f| %>
+                         <%= @submital.user_id = current_user %>
+                         <%= f.label :posting_id %>
+                         <%= f.text_field :posting_id, value: @posting.id %>
+                         <%= f.submit %>
+
+                       <% end %>
+                     </div>
+                 </div>
+
+
+
+ </main>
+ <!-- main page ends -->

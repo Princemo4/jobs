@@ -1,0 +1,26 @@
+<!-- // Preloader markup -->
+<!-- <div id="element" class="introLoading"></div> -->
+
+
+<!-- Blog page banner -->
+<section id="banner" class="banner text-center">
+    <div class="container">
+        <div class="row">
+            <h1>Job Board</h1>
+            <p>Post Job, Recruit Talent, and Find Work</p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+  <div class="row" style="width: 50%">
+    <br>
+
+    <%= form_tag( postings_path, method: "get" ) do  %>
+      <%= text_field_tag :search, params[:search], placeholder: "Designer..." %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- banner ends -->

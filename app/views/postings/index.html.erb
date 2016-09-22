@@ -1,0 +1,55 @@
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <main id="wrapper">
+
+
+        <!-- blog Page content -->
+        <section class="blog">
+            <div class="container" style="width: 90%"%>
+                <div class="page-nav">
+                    <span class="heading-nav"><a href="/">Home</a> | Blog</span>
+                </div>
+                <div class="row">
+                    <!-- blog content -->
+                    <div class="col-md-12 blog-content">
+                      <% @postings.each do |job| %>
+                        <article class="single-post">
+
+                            <div class="post-content">
+                                <h2><%= link_to job.title, job %></a></h2>
+                                <h3>Salary: <%= number_to_currency(job.salary, precision: 2) %><br></h3>
+                                <br>
+                                <p><%= job.description.truncate(100, omission: "...") unless job.description.blank? %>
+                                <%= link_to "Read more", job, class: "fa fa-calendar" %></p>
+
+                                <div class="post-meta">
+                                    <ul class="list-inline">
+                                        <li class="post-date"><i class="fa fa-calendar"></i> <%= time_ago_in_words(job.updated_at) %></li>
+                                        <li><a href="#"><i class="fa fa-user-md"></i>Employer: <%= job.user.name %></a></li>
+                                        <li class="post-comment"><a href="#"><i class="fa fa-comments-o"></i><%= job.submitals.count unless job.submitals == nil %> People Applied</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                      <% end %>
+
+                        <!-- ========post pagination======== -->
+                        <div class="post-pagination">
+                            <nav>
+                                <ul class="pagination">
+
+                                    <li class="active"><%= paginate @postings %></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- // Blog content ends here -->
+
+                    <!-- // blog sidebar -->
+                    <aside class="col-md-3 right-sidebar">
+                        <!-- widget -->
+
+
+    </main>
+    <!-- main page ends -->
