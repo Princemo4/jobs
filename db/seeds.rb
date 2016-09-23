@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Posting.where(title: "Web Developer").first_or_create(title: "Web Developer")
 
 location = [
   "Denver, CO",

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  authenticate :user do
+    resources :submital, only: [:create]
+  end
+  resources :submital, only: [:create]
+
   resources :postings do
     resources :submitals, except: :index
 
