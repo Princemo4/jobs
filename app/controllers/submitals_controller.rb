@@ -1,5 +1,5 @@
 class SubmitalsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def create
       @posting = Posting.find(params[:posting_id])

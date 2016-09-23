@@ -24,11 +24,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <!-- unordered list starts here -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.html">home</a></li>
+                            <li><a href="<%= root_path %>">home</a></li>
                             <li><a href="about.html">about us</a></li>
                             <li><a href="services.html">Our services</a></li>
                             <li><a href="blog.html">our Blog</a></li>
-                            <li><a href="contact.html">contact us</a></li>
+                            <%= current_user ? (link_to "Sign Out", destroy_user_session_path, method: :delete ) : (link_to "Sign In", new_user_session_path) %>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
