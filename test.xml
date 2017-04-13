@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <language>en</language>
+   <lastUpdated>2015-11-11T22:21:37+00:00</lastUpdated>
+   <providerName>Acme Productions</providerName>
+   <shortFormVideos>
+      <element>
+         <content>
+            <url>https://dwknz3zfy9iu1.cloudfront.net/uscenes_h-264_hd_test.mp4</url>
+         </content>
+         <id>1509428502952</id>
+         <releaseDate>2016-01-01</releaseDate>
+         <shortDescription>Astonishing short-form video</shortDescription>
+         <thumbnail>https://example.org/cdn/thumbnails/1509428502952/1</thumbnail>
+         <title>The Amazing Short-form Video</title>
+      </element>
+   </shortFormVideos>
+</root>
